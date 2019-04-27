@@ -1,10 +1,14 @@
+const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   mode: 'production',
-  entry: `${__dirname}/src/client/scripts/index.ts`,
+  entry: [
+    'webpack-hot-middleware/client',
+    `${__dirname}/src/client/scripts/index.ts`
+  ],
   output: {
-    path: `${__dirname}/src/client/dist`,
+    path: `${__dirname}/public`,
     filename: 'index.js'
   },
   module: {
@@ -21,8 +25,7 @@ module.exports = {
             {
               loader: 'css-loader',
               options: {
-                url: false,
-                minimize: true
+                url: false
               }
             },
             {
@@ -41,7 +44,10 @@ module.exports = {
     extensions: ['.js', '.ts'],
     modules: ['node_modules']
   },
-  plugins: [new ExtractTextPlugin('style.css')],
+  plugins: [
+    new ExtractTextPlugin('style.css'),
+    new webpack.HotModuleReplacementPlugin()
+  ],
   performance: {
     hints: false
   }

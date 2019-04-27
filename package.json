@@ -7,7 +7,9 @@
     "lint": "eslint src/**/*.ts",
     "format": "prettier-eslint --write src/**/*.ts",
     "precommit": "lint-staged",
-    "test": "jest"
+    "test": "jest",
+    "client-build": "webpack --config webpack.config.js",
+    "start": "ts-node-dev src/server/app.ts"
   },
   "lint-staged": {
     "*.ts": [
@@ -39,6 +41,8 @@
     "sass-loader": "^7.1.0",
     "ts-jest": "^24.0.2",
     "ts-loader": "^5.4.3",
+    "ts-node": "^8.1.0",
+    "ts-node-dev": "^1.0.0-pre.32",
     "typescript": "^3.4.4",
     "webpack": "^4.30.0",
     "webpack-cli": "^3.3.1",
