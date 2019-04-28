@@ -17,9 +17,21 @@
       "git add"
     ]
   },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.ts$"
+  },
   "devDependencies": {
     "@types/express": "^4.16.1",
+    "@types/jest": "^24.0.11",
     "@types/node": "^11.13.7",
+    "@types/sequelize": "^4.27.48",
     "@typescript-eslint/eslint-plugin": "^1.7.0",
     "@typescript-eslint/parser": "^1.7.0",
     "autoprefixer": "^9.5.1",
@@ -51,6 +63,7 @@
     "webpack-hot-middleware": "^2.24.3"
   },
   "dependencies": {
+    "ejs": "^2.6.1",
     "express": "^4.16.4",
     "sequelize": "^5.7.6"
   }
