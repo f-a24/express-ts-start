@@ -51,6 +51,7 @@
     "webpack-hot-middleware": "^2.24.3"
   },
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "sequelize": "^5.7.6"
   }
 }

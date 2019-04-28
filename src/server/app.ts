@@ -1,5 +1,6 @@
 import express from 'express';
 import { createServer } from 'http';
+import Sequelize from 'sequelize';
 
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
@@ -13,7 +14,7 @@ app.set('port', 1337);
 
 app.use(
   webpackDevMiddleware(compiler, {
-    publicPath: webpackConfig.output.path
+    publicPath: webpackConfig.output.publicPath
   })
 );
 app.use(webpackHotMiddleware(compiler));
