@@ -1,6 +1,5 @@
 import express from 'express';
 import { createServer } from 'http';
-import Sequelize from 'sequelize';
 import index from './routes/index';
 
 const webpack = require('webpack');
