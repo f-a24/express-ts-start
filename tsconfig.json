@@ -64,5 +64,7 @@
 
     /* 詳細オプション */
     "locale": "ja-jp" /* ユーザーにメッセージを表示するときに使用するロケール (例: 'en-us') */
-  }
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "__test__/**/*.test.ts"]
 }
