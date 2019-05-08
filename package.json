@@ -4,13 +4,15 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "lint": "eslint src/**/*.ts",
-    "lint-style": "stylelint src/**/*.scss",
-    "format": "prettier-eslint --write src/**/*.ts",
-    "format-style": "prettier-stylelint --write src/**/*.scss",
+    "lint": "npm run lint:ts && npm run lint:scss",
+    "lint:ts": "eslint src/**/*.ts",
+    "lint:scss": "stylelint src/**/*.scss",
+    "fmt": "npm run fmt:ts && npm run fmt:scss",
+    "fmt:ts": "prettier-eslint --write src/**/*.ts",
+    "fmt:scss": "prettier-stylelint --write src/**/*.scss",
     "precommit": "lint-staged",
     "test": "jest",
-    "client-build": "webpack --config webpack.config.js",
+    "build:client": "webpack --config webpack.config.js",
     "start": "ts-node-dev src/server/app.ts"
   },
   "lint-staged": {
@@ -36,6 +38,7 @@
   "prettier": {},
   "devDependencies": {
     "@types/express": "^4.16.1",
+    "@types/helmet": "^0.0.43",
     "@types/jest": "^24.0.11",
     "@types/jquery": "^3.3.29",
     "@types/node": "^11.13.7",
@@ -79,6 +82,7 @@
   "dependencies": {
     "ejs": "^2.6.1",
     "express": "^4.16.4",
+    "helmet": "^3.18.0",
     "jquery": "^3.4.1",
     "mysql2": "^1.6.5",
     "sequelize": "^5.7.6"
