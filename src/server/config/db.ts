@@ -1,12 +1,4 @@
-type DBConfigType = {
-  username: string;
-  password: string;
-  database: string;
-  host: string;
-  port?: number;
-  dialect: 'mysql' | 'postgres' | 'sqlite' | 'mariadb' | 'mssql' | undefined;
-  timezone: string;
-};
+import DBConfigType from '../../type/dbConfig';
 
 export default {
   development: {
