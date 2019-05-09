@@ -17,18 +17,19 @@ expres-ts-start
 ├─ public                  // 開発環境で出力されるディレクトリ
 ├─ node_modules            // パッケージ群
 ├─ src
-|  ├─ client               //
+|  ├─ client               // フロント側ファイル
 |  |  ├─ scripts           //
 |  |  └─ scss              //
-|  └─ server               //
-|     ├─ config            //
-|     ├─ logs              //
-|     ├─ migrations        //
-|     ├─ models            //
-|     ├─ routes            //
-|     ├─ views             //
-|     ├─ utils             //
-|     └─ app.ts            // エントリーポイント
+|  ├─ server               // サーバー側ファイル
+|  |  ├─ config            //
+|  |  ├─ logs              //
+|  |  ├─ migrations        //
+|  |  ├─ models            //
+|  |  ├─ routes            //
+|  |  ├─ views             //
+|  |  ├─ utils             //
+|  |  └─ app.ts            // エントリーポイント
+|  └─ types                // 型定義ファイル
 |
 ├─ .eslintrc               // eslint設定ファイル
 ├─ .gitignore              // git対象外設定ファイル
@@ -105,4 +106,17 @@ devDependencies
 
 | スクリプト | 実行コマンド | 概要 |
 | :--------- | :----------- | :--- |
-|            |              |      |
+|dev|ts-node-dev src/server/app.ts||
+|serve|||
+|start|||
+|build|||
+|build:server|webpack --config webpack.config.js||
+|build:client|webpack --config webpack.config.js||
+|lint|npm run lint:ts && npm run lint:scss||
+|lint:ts|eslint src/**/*.ts||
+|lint:scss|stylelint src/**/*.scss||
+|fmt|npm run fmt:ts && npm run fmt:scss||
+|fmt:ts|prettier-eslint --write src/**/*.ts||
+|fmt:scss|prettier-stylelint --write src/**/*.scss||
+|precommit|lint-staged||
+|test|jest||
