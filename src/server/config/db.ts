@@ -1,4 +1,4 @@
-import DBConfigType from '../../types/dbConfigg';
+import DBConfigType from '../../types/dbConfig';
 
 export default {
   development: {
