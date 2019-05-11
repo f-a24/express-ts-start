@@ -9,6 +9,11 @@
   </head>
   <body>
     <h1>Hello World</h1>
+    <ul>
+      <% for (let item of items) { %>
+        <li><%- item %></li>
+      <% } %>
+      </ul>
     <script src="index.js"></script>
   </body>
 </html>

@@ -47,6 +47,7 @@
     "@types/jquery": "^3.3.29",
     "@types/node": "^11.13.7",
     "@types/sequelize": "^4.27.48",
+    "@types/supertest": "^2.0.7",
     "@typescript-eslint/eslint-plugin": "^1.7.0",
     "@typescript-eslint/parser": "^1.7.0",
     "autoprefixer": "^9.5.1",
@@ -90,6 +91,7 @@
     "helmet": "^3.18.0",
     "jquery": "^3.4.1",
     "mysql2": "^1.6.5",
-    "sequelize": "^5.7.6"
+    "sequelize": "^5.7.6",
+    "supertest": "^4.0.2"
   }
 }
