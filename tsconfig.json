@@ -14,7 +14,7 @@
     // "declarationMap": true,                /* 対応する各 '.d.ts' ファイルに sourcemap を生成します。 */
     // "sourceMap": true,                     /* 対応する '.map' ファイルを生成します。 */
     // "outFile": "./",                       /* 出力を連結して 1 つのファイルを生成します。 */
-    // "outDir": "./",                        /* ディレクトリへ出力構造をリダイレクトします。 */
+    "outDir": "./build" /* ディレクトリへ出力構造をリダイレクトします。 */,
     // "rootDir": "./",                       /* 入力ファイルのルート ディレクトリを指定します。--outDir とともに、出力ディレクトリ構造の制御に使用します。 */
     // "composite": true,                     /* プロジェクトのコンパイルを有効にします */
     // "incremental": true,                   /* Enable incremental compilation */

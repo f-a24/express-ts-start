@@ -14,21 +14,23 @@ app.set('view engine', 'ejs');
 app.use(helmet());
 
 // HMR
-const webpack = require('webpack');
-const webpackHotMiddleware = require('webpack-hot-middleware');
-const webpackDevMiddleware = require('webpack-dev-middleware');
-const webpackConfig = require('../../webpack.config');
+if (process.env.NODE_ENV === 'development') {
+  const webpack = require('webpack');
+  const webpackHotMiddleware = require('webpack-hot-middleware');
+  const webpackDevMiddleware = require('webpack-dev-middleware');
+  const webpackConfig = require('../../webpack.config');
 
-const compiler = webpack(webpackConfig);
+  const compiler = webpack(webpackConfig);
 
-app.use(webpackHotMiddleware(compiler));
-app.use(
-  webpackDevMiddleware(compiler, {
-    publicPath: webpackConfig.output.publicPath
-  })
-);
+  app.use(webpackHotMiddleware(compiler));
+  app.use(
+    webpackDevMiddleware(compiler, {
+      publicPath: webpackConfig.output.publicPath
+    })
+  );
+}
 
-app.use(express.static(webpackConfig.output.path));
+app.use(express.static('public'));
 app.use('/', index);
 
 const server = createServer(app);
