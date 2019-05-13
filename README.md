@@ -62,7 +62,7 @@ dependencies
 | helmet       | 3.18.0     | CSR                  |
 | jquery       | 3.4.1      | jQuery               |
 | mysql2       | 1.6.5      | DB アダプター        |
-| sequelize    | 5.7.6      | OR マッパー          |
+| sequelize    | 5.8.6      | OR マッパー          |
 | supertest    | 4.0.2      | テスト用             |
 
 devDependencies
@@ -70,21 +70,24 @@ devDependencies
 | パッケージ名                     | バージョン   | 概要                                                 |
 | :------------------------------- | :----------- | :--------------------------------------------------- |
 | @types/express                   | 4.16.1       | 型定義                                               |
+| @types/helmet                    | 0.0.43       | 〃                                                   |
 | @types/jest                      | 24.0.11      | 〃                                                   |
 | @types/jquery                    | 3.3.29       | 〃                                                   |
-| @types/node                      | 11.13.7      | 〃                                                   |
+| @types/node                      | 12.0.0       | 〃                                                   |
 | @types/sequelize                 | 4.27.48      | 〃                                                   |
-| @typescript-eslint/eslint-plugin | 1.7.0        | ESLint x TypeScript 用                               |
-| @typescript-eslint/parser        | 1.7.0        | 〃                                                   |
+| @types/supertest                 | 2.0.7        | 〃                                                   |
+| @typescript-eslint/eslint-plugin | 1.9.0        | ESLint x TypeScript 用                               |
+| @typescript-eslint/parser        | 1.9.0        | 〃                                                   |
 | autoprefixer                     | 9.5.1        | autoprefix 用                                        |
+| cpx                              | 1.5.0        | ファイルコピー用                                     |
 | css-loader                       | 2.1.1        | JS で CSS を取り込む用                               |
 | eslint                           | 5.16.0       | ESLint(静的チェッカー)                               |
 | eslint-config-airbnb-base        | 13.1.0       | 〃                                                   |
 | eslint-config-prettier           | 4.1.0        | 〃                                                   |
 | eslint-plugin-import             | 2.17.2       | 〃                                                   |
-| eslint-plugin-prettier           | 3.0.1        | 〃                                                   |
+| eslint-plugin-prettier           | 3.1.0        | 〃                                                   |
 | extract-text-webpack-plugin      | 4.0.0-beta.0 | css ファイル出力用                                   |
-| husky                            | 1.3.1        | git hook で Pre-commit 時に ESLint + Prettier 設定用 |
+| husky                            | 2.2.1        | git hook で Pre-commit 時に ESLint + Prettier 設定用 |
 | jest                             | 24.7.1       | UT 用ライブラリ                                      |
 | lint-staged                      | 8.1.5        | git hook で Pre-commit 時に ESLint + Prettier 設定用 |
 | node-sass                        | 4.11.0       | scss ビルド用                                        |
@@ -93,18 +96,19 @@ devDependencies
 | prettier-eslint                  | 8.8.2        | 〃                                                   |
 | prettier-eslint-cli              | 4.7.1        | 〃                                                   |
 | prettier-stylelint               | 0.4.2        | 〃                                                   |
+| rimraf                           | 2.6.3        | ファイル削除用                                       |
 | sass-loader                      | 7.1.0        | scss x TypeScript 用                                 |
 | sequelize-cli                    | 5.4.0        | sequelize                                            |
 | stylelint                        | 10.0.1       | StyleLint(静的チェッカー)                            |
 | stylelint-config-standard        | 18.3.0       | 〃                                                   |
-| stylelint-prettier               | 1.0.6        | 〃                                                   |
+| stylelint-prettier               | 1.1.0        | 〃                                                   |
 | stylelint-scss                   | 3.6.1        | 〃                                                   |
 | ts-jest                          | 24.0.2       | Jest x TypeScript 用                                 |
-| ts-loader                        | 5.4.3        | webpack x TypeScript 用                              |
+| ts-loader                        | 6.0.0        | webpack x TypeScript 用                              |
 | ts-node                          | 8.1.0        | Node.js x TypeScript 用                              |
-| ts-node-dev                      | 1.0.0-pre.32 | 〃（開発用）                                         |
+| ts-node-dev                      | 1.0.0-pre.39 | 〃（開発用）                                         |
 | typescript                       | 3.4.4        | TypeScript(AltJS)                                    |
-| webpack                          | 4.30.0       | webpack(bundle)                                      |
+| webpack                          | 4.31.0       | webpack(bundle)                                      |
 | webpack-cli                      | 3.3.1        | 〃                                                   |
 | webpack-dev-middleware           | 3.6.2        | webpack 開発用サーバ                                 |
 | webpack-dev-server               | 3.3.1        | 〃                                                   |
@@ -117,19 +121,19 @@ devDependencies
 
 ## npm スクリプト
 
-| スクリプト   | 実行コマンド                              | 概要 |
-| :----------- | :---------------------------------------- | :--- |
-| dev          | ts-node-dev src/server/app.ts             |      |
-| serve        |                                           |      |
-| start        |                                           |      |
-| build        |                                           |      |
-| build:server | webpack --config webpack.config.js        |      |
-| build:client | webpack --config webpack.config.js        |      |
-| lint         | npm run lint:ts && npm run lint:scss      |      |
-| lint:ts      | eslint src/\*_/_.ts                       |      |
-| lint:scss    | stylelint src/\*_/_.scss                  |      |
-| fmt          | npm run fmt:ts && npm run fmt:scss        |      |
-| fmt:ts       | prettier-eslint --write src/\*_/_.ts      |      |
-| fmt:scss     | prettier-stylelint --write src/\*_/_.scss |      |
-| precommit    | lint-staged                               |      |
-| test         | jest                                      |      |
+| スクリプト   | 実行コマンド                                                                                       | 概要                  |
+| :----------- | :------------------------------------------------------------------------------------------------- | :-------------------- |
+| dev          | ts-node-dev src/server/app.ts                                                                      | 開発モードで起動      |
+| serve        | node build/server/app.js                                                                           | ビルド後の環境で起動  |
+| start        | npm run serve                                                                                      | 〃                    |
+| build        | npm run build:server && npm run build:client                                                       | ビルド                |
+| build:server | tsc && cpx src/server/views/\*.ejs build/server/views && rimraf build/client && rimraf build/types | 〃（サーバー側のみ）  |
+| build:client | webpack --config webpack.config.js                                                                 | 〃（フロント側のみ）  |
+| lint         | npm run lint:ts && npm run lint:scss                                                               | コードチェック        |
+| lint:ts      | eslint src/\*_/_.ts                                                                                | 〃（TypeScript のみ） |
+| lint:scss    | stylelint src/\*_/_.scss                                                                           | 〃（Scss のみ）       |
+| fmt          | npm run fmt:ts && npm run fmt:scss                                                                 | コードフォーマット    |
+| fmt:ts       | prettier-eslint --write src/\*_/_.ts                                                               | 〃（TypeScript のみ） |
+| fmt:scss     | prettier-stylelint --write src/\*_/_.scss                                                          | 〃（Scss のみ）       |
+| precommit    | lint-staged                                                                                        | Git コミット時用      |
+| test         | jest                                                                                               | テスト実行            |
