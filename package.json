@@ -75,7 +75,7 @@
     "webpack-hot-middleware": "^2.25.0"
   },
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "helmet": "^3.21.0",
     "mysql2": "^1.7.0",
     "react": "^16.9.0",
